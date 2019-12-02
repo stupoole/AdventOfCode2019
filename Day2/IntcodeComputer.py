@@ -7,16 +7,17 @@ file_token.close()
 in_program[1] = np.int64(12)
 in_program[2] = np.int64(2)
 i = np.int(0)
+
+# in_program[i] is the opcode.
+# in_program[i+1] is the position of the input a
+# in_program[i+2] is the position of the input b
+# in_program[i+3] is the position of the output
 while in_program[i] != 99:
-    opcode = in_program[i]
-    in_a_pos = in_program[i + 1]
-    in_b_pos = in_program[i + 2]
-    out_pos = in_program[i + 3]
     if in_program[i] == 1:
-        in_program[out_pos] = in_program[in_a_pos] + in_program[in_b_pos]
+        in_program[in_program[i + 3]] = in_program[in_program[i + 1]] + in_program[in_program[i + 2]]
 
     elif in_program[i] == 2:
-        in_program[out_pos] = in_program[in_a_pos] * in_program[in_b_pos]
+        in_program[in_program[i + 3]] = in_program[in_program[i + 1]] * in_program[in_program[i + 2]]
     else:
         print("something went wrong")
     i += 4
