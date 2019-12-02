@@ -1,5 +1,5 @@
 import numpy as np
-import int_code_computer
+from int_code_computer import int_code_computer
 
 # Load the input program
 file_token = open("input_programming.txt", "r")

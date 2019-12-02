@@ -8,7 +8,7 @@ def calculate_fuel_vect(m):
 
 
 # Load the input_masses
-file_token = open("input.txt", "r")
+file_token = open("input_masses.txt", "r")
 in_masses = np.loadtxt(file_token)
 file_token.close()
 
