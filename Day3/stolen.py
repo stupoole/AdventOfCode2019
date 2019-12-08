@@ -34,7 +34,3 @@ print("Day 03")
 print(f"1. {min(abs(x) + abs(y) for x, y in intersects)}")
 print(f"2. {min(path_a[p] + path_b[p] for p in intersects)}")
 
-for p in intersects:
-
-    if path_a[p] + path_b[p] == 15678:
-        print(p)
