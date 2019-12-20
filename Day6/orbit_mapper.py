@@ -17,13 +17,11 @@ for child in orbits:
         parent = orbits[parent]
         orbit_count += 1
 
-# start = orbits["YOU"]
-# target =
-path = list()
+
 root_count = 0
 path_count = 0
 
-# start point at yourself and interate until find common meeting point
+# start point at yourself and iterate until find common meeting point
 root = orbits["YOU"]
 target = orbits["SAN"]
 children = list()
