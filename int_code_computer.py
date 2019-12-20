@@ -12,7 +12,7 @@ class IntCodeComputer:
 
     def run(self, user_input):
         i = 0
-        diag_code = -1
+        diag_codes = list()
         input_counter = 0
         while True:
             opcode = self.program[i] % 100  # Last 2 digits
@@ -48,11 +48,13 @@ class IntCodeComputer:
 
             elif opcode == 3:  # take input
                 self.program[self.program[i + 1]] = user_input[input_counter]
+                # self.program[self.program[i + 1]] = int(input('please provide input'))
                 input_counter += 1
                 i += 2
 
             elif opcode == 4:  # output
-                diag_code = self.program[self.program[i + 1]]
+                diag_codes.append(self.program[self.program[i + 1]])
+                # print("diag code: ", self.program[self.program[i + 1]])
                 i += 2
 
             elif opcode == 5:  # jump if true
@@ -116,7 +118,7 @@ class IntCodeComputer:
                 i += 4
 
             elif opcode == 99:  # end
-                return self.program, diag_code
+                return self.program, diag_codes[-1]
             else:
                 print("something went wrong")
                 return -1
